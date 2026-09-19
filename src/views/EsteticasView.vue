@@ -13,15 +13,13 @@ import { aestheticEntries } from '@/data/studio';
     />
 
     <section class="gallery-grid" aria-label="Galería de estéticas">
-      <RouterLink
+      <article
         v-for="entry in aestheticEntries"
         :key="entry.slug"
-        :to="`/esteticas/${entry.slug}`"
         class="gallery-entry"
       >
         <figure class="gallery-entry__media">
           <img :src="entry.image" :alt="`${entry.title} placeholder preview`" loading="lazy" />
-          <span class="gallery-entry__action">View Aesthetic →</span>
         </figure>
 
         <div class="gallery-entry__body">
@@ -31,8 +29,16 @@ import { aestheticEntries } from '@/data/studio';
           <div class="tag-row">
             <span v-for="tag in entry.tags" :key="tag">{{ tag }}</span>
           </div>
+          <div class="gallery-entry__actions">
+            <RouterLink class="gallery-entry__primary" :to="`/esteticas/${entry.slug}/live`">
+              Open experience ↗
+            </RouterLink>
+            <RouterLink class="gallery-entry__secondary" :to="`/esteticas/${entry.slug}`">
+              Details
+            </RouterLink>
+          </div>
         </div>
-      </RouterLink>
+      </article>
     </section>
   </div>
 </template>

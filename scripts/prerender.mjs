@@ -3,7 +3,20 @@ import { dirname, join } from 'node:path';
 
 const distDir = join(process.cwd(), 'dist');
 const indexFile = join(distDir, 'index.html');
-const routes = ['esteticas', 'esteticas/example', 'esteticas/signal-density', 'esteticas/quiet-machines', 'lab', 'lab/example', 'lab/motion-scratches', 'lab/studio-archive', 'contacto'];
+const routes = [
+  'esteticas',
+  'esteticas/example',
+  'esteticas/example/live',
+  'esteticas/signal-density',
+  'esteticas/signal-density/live',
+  'esteticas/quiet-machines',
+  'esteticas/quiet-machines/live',
+  'lab',
+  'lab/example',
+  'lab/motion-scratches',
+  'lab/studio-archive',
+  'contacto',
+];
 
 async function ensureRoute(route) {
   const routeIndex = join(distDir, route, 'index.html');

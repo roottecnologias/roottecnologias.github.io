@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
 import SectionIntro from '@/components/ui/SectionIntro.vue';
 import { aestheticEntries } from '@/data/studio';
 
@@ -11,6 +11,8 @@ const entry = computed(() => aestheticEntries.find((item) => item.slug === route
 
 <template>
   <div class="page detail-page">
+    <RouterLink class="detail-back-link" to="/esteticas">← Back to aesthetics</RouterLink>
+
     <SectionIntro
       :eyebrow="`Estética / ${entry.number}`"
       :title="entry.title"
@@ -23,6 +25,9 @@ const entry = computed(() => aestheticEntries.find((item) => item.slug === route
         <div class="detail-visual-surface">
           <span>{{ entry.slug }}</span>
         </div>
+        <RouterLink class="detail-experience-cta" :to="`/esteticas/${entry.slug}/live`">
+          Open full experience ↗
+        </RouterLink>
       </article>
 
       <article class="detail-panel">
