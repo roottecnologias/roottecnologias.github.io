@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue';
 import EsteticasView from '@/views/EsteticasView.vue';
 import EsteticaDetailView from '@/views/EsteticaDetailView.vue';
 import EsteticaLiveView from '@/views/EsteticaLiveView.vue';
+import TerminalBloom from '@/aesthetics/terminal-bloom/TerminalBloom.vue';
 import LabView from '@/views/LabView.vue';
 import LabDetailView from '@/views/LabDetailView.vue';
 import ContactoView from '@/views/ContactoView.vue';
@@ -12,6 +13,7 @@ const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: HomeView },
     { path: '/esteticas', name: 'esteticas', component: EsteticasView },
+    { path: '/esteticas/terminal-bloom/live', name: 'terminal-bloom-live', component: TerminalBloom },
     { path: '/esteticas/:slug/live', name: 'estetica-live', component: EsteticaLiveView, props: true },
     { path: '/esteticas/:slug', name: 'estetica-detail', component: EsteticaDetailView, props: true },
     { path: '/lab', name: 'lab', component: LabView },

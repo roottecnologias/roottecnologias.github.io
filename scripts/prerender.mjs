@@ -5,6 +5,8 @@ const distDir = join(process.cwd(), 'dist');
 const indexFile = join(distDir, 'index.html');
 const routes = [
   'esteticas',
+  'esteticas/terminal-bloom',
+  'esteticas/terminal-bloom/live',
   'esteticas/example',
   'esteticas/example/live',
   'esteticas/signal-density',

@@ -6,6 +6,7 @@ import { studioNavigation } from '@/data/navigation';
 
 const route = useRoute();
 const menuOpen = ref(false);
+const isAestheticExperience = computed(() => route.path === '/esteticas/terminal-bloom/live');
 
 const currentLabel = computed(() => {
   const currentItem = studioNavigation.find((item) => item.to === route.path);
@@ -18,7 +19,9 @@ function closeMenu() {
 </script>
 
 <template>
-  <div class="app-shell">
+  <RouterView v-if="isAestheticExperience" />
+
+  <div v-else class="app-shell">
     <a class="skip-link" href="#main-content">Saltar al contenido</a>
 
     <header class="site-header">
@@ -62,9 +65,11 @@ function closeMenu() {
     </header>
 
     <main id="main-content" class="page-frame">
-      <Transition name="page" mode="out-in">
-        <RouterView />
-      </Transition>
+      <RouterView v-slot="{ Component }">
+        <Transition name="page" mode="out-in">
+          <component :is="Component" />
+        </Transition>
+      </RouterView>
     </main>
 
     <StudioFooter />

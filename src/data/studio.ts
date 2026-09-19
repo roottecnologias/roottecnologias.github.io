@@ -49,6 +49,14 @@ export const studioMembers: StudioMember[] = [
 
 export const aestheticEntries: AestheticEntry[] = [
   {
+    slug: 'terminal-bloom',
+    number: '00',
+    title: 'Terminal Bloom',
+    summary: 'A botanical archive viewed through an early computational instrument.',
+    tags: ['botanical', 'archive', 'interface'],
+    image: placeholderTexture,
+  },
+  {
     slug: 'example',
     number: '01',
     title: 'Example Aesthetic',

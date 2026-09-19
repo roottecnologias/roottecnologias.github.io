@@ -1,0 +1,98 @@
+.terminal-bloom {
+  --tb-paper: #e9e4d6;
+  --tb-paper-deep: #d9d2c0;
+  --tb-ink: #18221d;
+  --tb-muted: #69736a;
+  --tb-green: #48664b;
+  --tb-moss: #82936f;
+  --tb-rust: #b45f3e;
+  --tb-ochre: #c49847;
+  --tb-rule: rgba(24, 34, 29, 0.23);
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--tb-ink);
+  background-color: var(--tb-paper);
+  background-image: linear-gradient(rgba(24, 34, 29, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(24, 34, 29, 0.035) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+.terminal-bloom *,
+.terminal-bloom *::before,
+.terminal-bloom *::after { box-sizing: border-box; }
+
+.terminal-bloom a { color: inherit; }
+.terminal-bloom button { color: inherit; font: inherit; }
+.terminal-bloom :focus-visible { outline: 2px solid var(--tb-rust); outline-offset: 4px; }
+
+.tb-header,
+.terminal-bloom main,
+.tb-footer { width: min(100% - 3rem, 90rem); margin-inline: auto; }
+
+.tb-header { min-height: 4.5rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; border-bottom: 1px solid var(--tb-rule); }
+.tb-return,
+.tb-header-link,
+.tb-mark,
+.tb-kicker,
+.tb-hero__meta,
+.tb-detail-topline,
+.tb-readout,
+.tb-coordinate-note,
+.tb-footer { font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.tb-return, .tb-header-link { color: var(--tb-green); text-decoration: none; }
+.tb-return:hover, .tb-header-link:hover, .tb-footer a:hover { color: var(--tb-rust); }
+.tb-header-link { justify-self: end; }
+.tb-mark { margin: 0; text-align: center; color: var(--tb-muted); }
+.tb-mark span { color: var(--tb-ink); font-weight: 600; }
+
+.tb-hero { position: relative; min-height: 39rem; display: grid; grid-template-columns: 1fr minmax(18rem, 1.8fr) 1fr; align-items: center; gap: 2rem; padding: 5rem 0 7rem; border-bottom: 1px solid var(--tb-rule); }
+.tb-hero__meta { align-self: start; display: grid; gap: 0.8rem; padding-top: 1.25rem; color: var(--tb-muted); line-height: 1.5; }
+.tb-hero__meta p { margin: 0; }
+.tb-hero__meta strong { color: var(--tb-green); font-weight: 500; }
+.tb-hero__statement { position: relative; z-index: 1; }
+.tb-kicker { margin: 0 0 1rem; color: var(--tb-rust); }
+.tb-hero h1 { max-width: 8ch; margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(4rem, 9vw, 9.5rem); font-weight: 400; letter-spacing: -0.075em; line-height: 0.8; }
+.tb-hero h1 em { color: var(--tb-green); font-style: italic; }
+.tb-hero__intro { max-width: 29rem; margin: 2rem 0 0 0.4rem; color: var(--tb-muted); font-family: Georgia, serif; font-size: 1.1rem; line-height: 1.5; }
+.tb-hero__stamp { justify-self: end; align-self: end; display: grid; gap: 0.5rem; width: 7rem; height: 7rem; place-content: center; border: 1px solid var(--tb-rust); border-radius: 50%; color: var(--tb-rust); transform: rotate(12deg); text-align: center; }
+.tb-hero__stamp span { font-family: Georgia, serif; font-size: 2.1rem; line-height: 0.8; }
+.tb-hero__stamp small { font-size: 0.52rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+.tb-section { padding: 7rem 0; border-bottom: 1px solid var(--tb-rule); }
+.tb-section-heading { display: grid; grid-template-columns: 0.7fr 1.5fr 1fr; align-items: end; gap: 2rem; margin-bottom: 3rem; }
+.tb-section-heading .tb-kicker { margin: 0; }
+.tb-section-heading h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(2.6rem, 5vw, 5rem); font-weight: 400; letter-spacing: -0.06em; line-height: 0.9; }
+.tb-section-heading > p:last-child { max-width: 22rem; margin: 0; color: var(--tb-muted); line-height: 1.5; }
+.tb-specimen-layout { display: grid; grid-template-columns: 1fr 1.25fr; gap: 4rem; }
+.tb-specimen-list { border-top: 1px solid var(--tb-rule); }
+.tb-specimen-row { width: 100%; display: grid; grid-template-columns: 3rem 1fr auto 1.5rem; align-items: center; gap: 1rem; padding: 1.2rem 0; border: 0; border-bottom: 1px solid var(--tb-rule); background: transparent; cursor: pointer; text-align: left; }
+.tb-specimen-row:hover, .tb-specimen-row.is-selected { background: rgba(130, 147, 111, 0.15); }
+.tb-specimen-row__number, .tb-specimen-row__status { color: var(--tb-muted); font-size: 0.64rem; }
+.tb-specimen-row__name { display: grid; gap: 0.25rem; font-family: Georgia, serif; font-size: 1.2rem; }
+.tb-specimen-row__name small { color: var(--tb-muted); font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; }
+.tb-specimen-row__status { color: var(--tb-green); }
+.tb-specimen-row__arrow { color: var(--tb-rust); font-size: 1.25rem; opacity: 0; transition: opacity 180ms ease, transform 180ms ease; }
+.tb-specimen-row:hover .tb-specimen-row__arrow, .tb-specimen-row.is-selected .tb-specimen-row__arrow { opacity: 1; transform: translateX(0.25rem); }
+.tb-specimen-detail { display: grid; grid-template-columns: 1fr 1fr; min-height: 26rem; border: 1px solid var(--tb-rule); background: rgba(217, 210, 192, 0.5); }
+.tb-detail-topline { grid-column: 1 / -1; display: flex; justify-content: space-between; padding: 0.8rem 1rem; border-bottom: 1px solid var(--tb-rule); color: var(--tb-muted); }
+.tb-botanical-mark { position: relative; min-height: 20rem; overflow: hidden; border-right: 1px solid var(--tb-rule); background: #cdd1b9; }
+.tb-botanical-mark::before { content: ''; position: absolute; inset: 16% 18%; border: 1px solid rgba(24, 34, 29, 0.22); border-radius: 50%; transform: rotate(-24deg); }
+.tb-botanical-mark--moss { background: #b8c2a6; }
+.tb-botanical-mark--rust { background: #d0b5a0; }
+.tb-orbit { position: absolute; inset: 19% 24%; border: 1px solid rgba(24, 34, 29, 0.25); border-radius: 50%; transform: rotate(54deg); }
+.tb-orbit--two { inset: 27% 12%; transform: rotate(-42deg); }
+.tb-stem { position: absolute; left: 52%; bottom: 15%; width: 0.25rem; height: 60%; background: var(--tb-green); transform: rotate(10deg); transform-origin: bottom; }
+.tb-leaf { position: absolute; width: 3.7rem; height: 1.5rem; border: 1px solid var(--tb-green); border-radius: 100% 0 100% 0; background: rgba(72, 102, 75, 0.7); }
+.tb-leaf--one { left: 32%; bottom: 48%; transform: rotate(24deg); }.tb-leaf--two { left: 53%; bottom: 61%; transform: rotate(-52deg) scale(0.8); }.tb-leaf--three { left: 23%; bottom: 27%; transform: rotate(-15deg) scale(0.65); }
+.tb-bloom { position: absolute; left: 45%; top: 19%; width: 4.5rem; height: 4.5rem; border: 1px solid var(--tb-rust); border-radius: 50%; background: var(--tb-ochre); box-shadow: 0 0 0 0.8rem rgba(180, 95, 62, 0.12), 0 0 0 1.6rem rgba(180, 95, 62, 0.07); }
+.tb-botanical-mark--moss .tb-bloom { background: var(--tb-moss); border-color: var(--tb-green); }.tb-botanical-mark--rust .tb-bloom { background: var(--tb-rust); }
+.tb-specimen-detail__copy { align-self: end; padding: 1.5rem; }.tb-specimen-detail__copy h3 { margin: 0 0 1rem; font-family: Georgia, serif; font-size: 2.4rem; font-weight: 400; line-height: 0.95; }.tb-specimen-detail__copy > p:not(.tb-kicker) { color: var(--tb-muted); line-height: 1.5; }.tb-specimen-detail dl { display: grid; gap: 0.7rem; margin: 2rem 0 0; padding-top: 1rem; border-top: 1px solid var(--tb-rule); }.tb-specimen-detail dl div { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.65rem; text-transform: uppercase; }.tb-specimen-detail dt { color: var(--tb-muted); }.tb-specimen-detail dd { margin: 0; color: var(--tb-green); text-align: right; }
+
+.tb-research { display: grid; grid-template-columns: 0.8fr 1.2fr 0.6fr; gap: 3rem; align-items: start; }.tb-research .tb-section-heading { display: block; margin: 0; }.tb-research .tb-section-heading h2 { margin-top: 2rem; }.tb-readout { display: grid; gap: 1.1rem; padding: 1.5rem 0; border-top: 1px solid var(--tb-rule); border-bottom: 1px solid var(--tb-rule); }.tb-readout__label, .tb-readout__line { display: grid; grid-template-columns: 1.4fr auto; gap: 1rem; }.tb-readout__label { color: var(--tb-muted); }.tb-readout__label span:last-child { color: var(--tb-green); }.tb-readout__line { position: relative; align-items: center; color: var(--tb-muted); }.tb-readout__line strong { color: var(--tb-ink); font-weight: 500; }.tb-readout__line i { grid-column: 1 / -1; height: 0.35rem; background: var(--tb-paper-deep); }.tb-readout__line i::after { content: ''; display: block; width: var(--value); height: 100%; background: var(--tb-green); }.tb-readout__note { margin: 0.5rem 0 0; color: var(--tb-rust); line-height: 1.5; text-transform: none; letter-spacing: 0; }.tb-coordinate-note { display: grid; align-content: end; gap: 0.7rem; color: var(--tb-muted); }.tb-coordinate-note span::before { content: 'x '; color: var(--tb-rust); }
+
+.tb-statement { display: grid; grid-template-columns: 1fr 2.2fr 1fr; gap: 2rem; align-items: start; padding: 9rem 0; border-bottom: 1px solid var(--tb-rule); }.tb-statement blockquote { margin: 0; font-family: Georgia, serif; font-size: clamp(2.2rem, 4.5vw, 5rem); font-style: italic; letter-spacing: -0.06em; line-height: 0.95; }.tb-statement > p:last-child { margin: 0; color: var(--tb-muted); line-height: 1.5; }
+.tb-footer { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; padding: 2rem 0 3rem; color: var(--tb-muted); }.tb-footer p { margin: 0; }.tb-footer a { color: var(--tb-green); }.tb-footer__index { justify-self: end; }
+
+@media (max-width: 56rem) { .tb-hero { grid-template-columns: 1fr 8rem; min-height: 34rem; }.tb-hero__statement { grid-column: 1 / -1; grid-row: 2; }.tb-hero__meta { grid-column: 1 / -1; grid-row: 1; }.tb-hero__stamp { grid-column: 2; grid-row: 1; }.tb-specimen-layout, .tb-research { grid-template-columns: 1fr; gap: 3rem; }.tb-research .tb-section-heading { display: grid; grid-template-columns: 0.7fr 1fr; gap: 1rem; }.tb-research .tb-section-heading h2 { margin-top: 0; }.tb-coordinate-note { grid-template-columns: repeat(3, 1fr); }.tb-statement { grid-template-columns: 1fr; }.tb-statement > p:last-child { max-width: 22rem; margin-left: auto; } }
+@media (max-width: 38rem) { .tb-header, .terminal-bloom main, .tb-footer { width: min(100% - 2rem, 90rem); }.tb-header { grid-template-columns: 1fr auto; min-height: 4rem; }.tb-mark { display: none; }.tb-header-link { grid-column: 2; grid-row: 1; }.tb-hero { display: block; min-height: 0; padding: 3rem 0 4rem; }.tb-hero__meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin-bottom: 4rem; padding: 0; }.tb-hero__meta p { max-width: 18rem; }.tb-hero h1 { font-size: clamp(3.8rem, 19vw, 6rem); }.tb-hero__intro { margin: 1.5rem 0 0; font-size: 1rem; }.tb-hero__stamp { margin: 3rem 0 0 auto; }.tb-section { padding: 4.5rem 0; }.tb-section-heading { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }.tb-section-heading h2 { font-size: 3rem; }.tb-specimen-row { grid-template-columns: 2rem 1fr 1rem; gap: 0.6rem; }.tb-specimen-row__status { display: none; }.tb-specimen-detail { display: block; }.tb-detail-topline { font-size: 0.58rem; }.tb-botanical-mark { min-height: 16rem; border-right: 0; border-bottom: 1px solid var(--tb-rule); }.tb-specimen-detail__copy { padding: 1.2rem; }.tb-research .tb-section-heading { display: block; }.tb-research .tb-section-heading h2 { margin-top: 1.5rem; }.tb-coordinate-note { font-size: 0.57rem; }.tb-statement { padding: 5rem 0; }.tb-statement blockquote { font-size: 2.8rem; }.tb-footer { grid-template-columns: 1fr; gap: 1.2rem; font-size: 0.58rem; }.tb-footer__index { justify-self: start; } }
+@media (prefers-reduced-motion: reduce) { .terminal-bloom *, .terminal-bloom *::before, .terminal-bloom *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; } }
