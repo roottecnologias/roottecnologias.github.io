@@ -43,23 +43,23 @@ function closeMenu() {
         <span>{{ menuOpen ? 'Cerrar' : 'Menú' }}</span>
         <span class="menu-toggle__label">{{ currentLabel }}</span>
       </button>
-    </header>
 
-    <Transition name="menu-panel">
-      <div v-if="menuOpen" id="mobile-nav" class="mobile-nav" role="dialog" aria-label="Navegación móvil">
-        <RouterLink
-          v-for="item in studioNavigation"
-          :key="item.to"
-          :to="item.to"
-          class="mobile-nav__link"
-          :class="{ 'is-active': route.path === item.to }"
-          @click="closeMenu"
-        >
-          <span>{{ item.label }}</span>
-          <small>{{ item.hint }}</small>
-        </RouterLink>
-      </div>
-    </Transition>
+      <Transition name="menu-panel">
+        <div v-if="menuOpen" id="mobile-nav" class="mobile-nav" role="dialog" aria-label="Navegación móvil">
+          <RouterLink
+            v-for="item in studioNavigation"
+            :key="item.to"
+            :to="item.to"
+            class="mobile-nav__link"
+            :class="{ 'is-active': route.path === item.to }"
+            @click="closeMenu"
+          >
+            <span>{{ item.label }}</span>
+            <small>{{ item.hint }}</small>
+          </RouterLink>
+        </div>
+      </Transition>
+    </header>
 
     <main id="main-content" class="page-frame">
       <Transition name="page" mode="out-in">
