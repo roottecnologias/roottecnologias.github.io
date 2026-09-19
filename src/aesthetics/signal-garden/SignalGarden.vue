@@ -98,10 +98,11 @@ function animate(time: number) {
 }
 
 function setPointer(event: PointerEvent) {
-  const canvas = fieldCanvas.value;
-  if (!canvas) return;
-  const rect = canvas.getBoundingClientRect();
-  pointer.value = { x: (event.clientX - rect.left) / rect.width, y: (event.clientY - rect.top) / rect.height, active: true };
+  pointer.value = {
+    x: Math.min(1, Math.max(0, event.clientX / window.innerWidth)),
+    y: Math.min(1, Math.max(0, event.clientY / window.innerHeight)),
+    active: true,
+  };
 }
 
 function clearPointer() { pointer.value.active = false; }
@@ -127,18 +128,25 @@ onMounted(() => {
   resizeObserver = new ResizeObserver(() => { resizeCanvas(fieldCanvas.value); resizeCanvas(monitorCanvas.value); });
   if (fieldCanvas.value) resizeObserver.observe(fieldCanvas.value);
   if (monitorCanvas.value) resizeObserver.observe(monitorCanvas.value);
+  window.addEventListener('pointermove', setPointer, { passive: true });
+  window.addEventListener('pointerleave', clearPointer);
   animationFrame = requestAnimationFrame(animate);
 });
 
-onUnmounted(() => { cancelAnimationFrame(animationFrame); resizeObserver?.disconnect(); });
+onUnmounted(() => {
+  cancelAnimationFrame(animationFrame);
+  resizeObserver?.disconnect();
+  window.removeEventListener('pointermove', setPointer);
+  window.removeEventListener('pointerleave', clearPointer);
+});
 </script>
 
 <template>
   <div class="signal-garden">
+    <canvas ref="fieldCanvas" class="sg-field" aria-label="Animated generative signal field"></canvas>
     <header class="sg-header"><RouterLink to="/esteticas/signal-garden" class="sg-exit">&#8592; Back to aesthetic</RouterLink><span class="sg-system-mark">SG / FIELD 06</span></header>
     <main>
       <section class="sg-opening" aria-labelledby="sg-title">
-        <canvas ref="fieldCanvas" class="sg-field" aria-label="Animated generative signal field"></canvas>
         <div class="sg-opening__statement"><p class="sg-micro">A SYSTEM THAT IS CONTINUOUSLY PRODUCING</p><h1 id="sg-title">Signal<br /><em>Garden</em></h1><p class="sg-opening__lede">Information behaves like a living signal. Influence the field. Observe what emerges.</p></div>
         <div class="sg-opening__readout"><span>STATE</span><strong>{{ stateLabel }}</strong><span>FRAME</span><strong>{{ String(frame).padStart(6, '0') }}</strong><span>FREQ</span><strong>{{ frequency.toFixed(1) }} HZ</strong></div>
         <a class="sg-scroll" href="#live-field" aria-label="Enter the live field">ENTER FIELD &#8595;</a>
