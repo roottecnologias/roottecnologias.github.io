@@ -49,6 +49,14 @@ export const studioMembers: StudioMember[] = [
 
 export const aestheticEntries: AestheticEntry[] = [
   {
+    slug: 'nocturne-grid',
+    number: '04',
+    title: 'Nocturne Grid',
+    summary: 'An architectural interface for structures that only exist in motion.',
+    tags: ['architecture', 'spatial', 'night study'],
+    image: placeholderTexture,
+  },
+  {
     slug: 'terminal-bloom',
     number: '00',
     title: 'Terminal Bloom',

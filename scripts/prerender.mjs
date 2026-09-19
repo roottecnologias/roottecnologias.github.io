@@ -7,6 +7,8 @@ const routes = [
   'esteticas',
   'esteticas/terminal-bloom',
   'esteticas/terminal-bloom/live',
+  'esteticas/nocturne-grid',
+  'esteticas/nocturne-grid/live',
   'esteticas/example',
   'esteticas/example/live',
   'esteticas/signal-density',
