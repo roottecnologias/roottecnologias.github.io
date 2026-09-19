@@ -6,7 +6,7 @@ import { studioNavigation } from '@/data/navigation';
 
 const route = useRoute();
 const menuOpen = ref(false);
-const isAestheticExperience = computed(() => route.path === '/esteticas/terminal-bloom/live');
+const isAestheticExperience = computed(() => /^\/esteticas\/[^/]+\/live\/?$/.test(route.path));
 
 const currentLabel = computed(() => {
   const currentItem = studioNavigation.find((item) => item.to === route.path);
