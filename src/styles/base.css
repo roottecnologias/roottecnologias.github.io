@@ -140,10 +140,12 @@ img {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(11, 13, 18, 0.9);
-  border-bottom: 1px solid transparent;
   backdrop-filter: blur(18px);
-  isolation: isolate;
+  margin-inline: 1em 0; 
+  margin-inline: 0px;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
 }
 
 .wordmark {
