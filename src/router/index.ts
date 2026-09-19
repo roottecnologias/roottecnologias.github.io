@@ -5,6 +5,8 @@ import EsteticaDetailView from '@/views/EsteticaDetailView.vue';
 import EsteticaLiveView from '@/views/EsteticaLiveView.vue';
 import TerminalBloom from '@/aesthetics/terminal-bloom/TerminalBloom.vue';
 import NocturneGrid from '@/aesthetics/nocturne-grid/NocturneGrid.vue';
+import SwissSystem from '@/aesthetics/swiss-system/SwissSystem.vue';
+import SignalGarden from '@/aesthetics/signal-garden/SignalGarden.vue';
 import LabView from '@/views/LabView.vue';
 import LabDetailView from '@/views/LabDetailView.vue';
 import ContactoView from '@/views/ContactoView.vue';
@@ -16,6 +18,8 @@ const router = createRouter({
     { path: '/esteticas', name: 'esteticas', component: EsteticasView },
     { path: '/esteticas/terminal-bloom/live', name: 'terminal-bloom-live', component: TerminalBloom },
     { path: '/esteticas/nocturne-grid/live', name: 'nocturne-grid-live', component: NocturneGrid },
+    { path: '/esteticas/swiss-system/live', name: 'swiss-system-live', component: SwissSystem },
+    { path: '/esteticas/signal-garden/live', name: 'signal-garden-live', component: SignalGarden },
     { path: '/esteticas/:slug/live', name: 'estetica-live', component: EsteticaLiveView, props: true },
     { path: '/esteticas/:slug', name: 'estetica-detail', component: EsteticaDetailView, props: true },
     { path: '/lab', name: 'lab', component: LabView },

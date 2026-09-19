@@ -49,6 +49,22 @@ export const studioMembers: StudioMember[] = [
 
 export const aestheticEntries: AestheticEntry[] = [
   {
+    slug: 'signal-garden',
+    number: '06',
+    title: 'Signal Garden',
+    summary: 'A living interface where information behaves like a changing signal.',
+    tags: ['generative', 'signal', 'ecosystem'],
+    image: placeholderTexture,
+  },
+  {
+    slug: 'swiss-system',
+    number: '05',
+    title: 'Swiss System',
+    summary: 'A responsive typographic system where information becomes the image.',
+    tags: ['grid', 'type', 'system'],
+    image: placeholderTexture,
+  },
+  {
     slug: 'nocturne-grid',
     number: '04',
     title: 'Nocturne Grid',
