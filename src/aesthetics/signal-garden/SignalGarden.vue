@@ -144,7 +144,7 @@ onUnmounted(() => {
 <template>
   <div class="signal-garden">
     <canvas ref="fieldCanvas" class="sg-field" aria-label="Animated generative signal field"></canvas>
-    <header class="sg-header"><RouterLink to="/esteticas/signal-garden" class="sg-exit">&#8592; Back to aesthetic</RouterLink><span class="sg-system-mark">SG / FIELD 06</span></header>
+    <header class="sg-header"><RouterLink to="/esteticas/signal-garden" class="sg-exit">WITHDRAW FROM FIELD</RouterLink><span class="sg-system-mark">SG / FIELD 06</span></header>
     <main>
       <section class="sg-opening" aria-labelledby="sg-title">
         <div class="sg-opening__statement"><p class="sg-micro">A SYSTEM THAT IS CONTINUOUSLY PRODUCING</p><h1 id="sg-title">Signal<br /><em>Garden</em></h1><p class="sg-opening__lede">Information behaves like a living signal. Influence the field. Observe what emerges.</p></div>
@@ -175,6 +175,6 @@ onUnmounted(() => {
 
       <section class="sg-system-section" aria-labelledby="system-title"><p class="sg-micro">06 / SYSTEM</p><h2 id="system-title">Signal is not an answer.<br /><em>It is a condition.</em></h2><p>Observe. Influence. Record. The garden is built to make emergence visible, then let it go.</p></section>
     </main>
-    <footer class="sg-footer"><span>SIGNAL GARDEN / SYSTEM IDLE</span><RouterLink to="/esteticas/signal-garden">&#8592; Back to aesthetic</RouterLink><span>FIELD CLOSED</span></footer>
+    <footer class="sg-footer"><span>SIGNAL GARDEN / SYSTEM IDLE</span><RouterLink to="/esteticas/signal-garden">WITHDRAW FROM FIELD</RouterLink><span>FIELD CLOSED</span></footer>
   </div>
 </template>

@@ -71,7 +71,7 @@ onUnmounted(() => window.removeEventListener('scroll', updateScroll));
     <div class="ng-axis" aria-hidden="true"><span>00</span><i></i><span>31</span></div>
 
     <header class="ng-header">
-      <RouterLink class="ng-return" to="/esteticas/nocturne-grid">&#8592; Back to aesthetic</RouterLink>
+      <RouterLink class="ng-return" to="/esteticas/nocturne-grid">LEAVE NIGHT STUDY</RouterLink>
       <p class="ng-wordmark"><span>NG / 07</span> Nocturne Grid</p>
       <a class="ng-jump" href="#plan"><span>Navigate</span> 02 <b>&#8595;</b></a>
     </header>
@@ -150,6 +150,6 @@ onUnmounted(() => window.removeEventListener('scroll', updateScroll));
       <section class="ng-human" aria-labelledby="human-title"><p class="ng-label">06 / Human scale</p><div><h2 id="human-title">The distance between<br />two walls is measured<br /><em>by a body.</em></h2><p>A structure becomes a place when someone slows down inside it. The grid does not prescribe a route. It gives the act of moving a visible edge.</p></div><span class="ng-human__mark">1.72 M<br /><small>AVERAGE EYE LINE</small></span></section>
     </main>
 
-    <footer class="ng-footer"><p>NOCTURNE GRID / PROJECT 07</p><RouterLink to="/esteticas/nocturne-grid">&#8592; Back to aesthetic</RouterLink><p>END / 06:42</p></footer>
+    <footer class="ng-footer"><p>NOCTURNE GRID / PROJECT 07</p><RouterLink to="/esteticas/nocturne-grid">CLOSE NIGHT STUDY</RouterLink><p>END / 06:42</p></footer>
   </div>
 </template>

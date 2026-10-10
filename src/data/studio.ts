@@ -49,6 +49,22 @@ export const studioMembers: StudioMember[] = [
 
 export const aestheticEntries: AestheticEntry[] = [
   {
+    slug: 'cartographic-error',
+    number: '08',
+    title: 'Cartographic Error',
+    summary: 'A precise survey instrument for a geography that contradicts itself.',
+    tags: ['cartography', 'fictional geography', 'instrument'],
+    image: placeholderTexture,
+  },
+  {
+    slug: 'dead-channel',
+    number: '07',
+    title: 'Dead Channel',
+    summary: 'An intercepted broadcast received through an unstable experimental television interface.',
+    tags: ['broadcast', 'signal', 'lost media'],
+    image: placeholderTexture,
+  },
+  {
     slug: 'signal-garden',
     number: '06',
     title: 'Signal Garden',

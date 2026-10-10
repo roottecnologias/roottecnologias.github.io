@@ -57,7 +57,7 @@ function selectSpecimen(specimen: Specimen) {
 <template>
   <div class="terminal-bloom">
     <header class="tb-header">
-      <RouterLink class="tb-return" to="/esteticas/terminal-bloom">&lt;- Back to aesthetic</RouterLink>
+      <RouterLink class="tb-return" to="/esteticas/terminal-bloom">CLOSE FIELD ARCHIVE</RouterLink>
       <p class="tb-mark"><span>TB</span> / FIELD ARCHIVE 07</p>
       <a class="tb-header-link" href="#specimens">Index <span aria-hidden="true">&#8595;</span></a>
     </header>

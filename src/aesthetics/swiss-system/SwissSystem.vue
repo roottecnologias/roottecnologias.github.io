@@ -39,7 +39,7 @@ function changeStudy(direction: number) {
 <template>
   <div class="swiss-system" :class="{ 'has-red-lines': redLines }" :style="systemStyle">
     <header class="ss-header">
-      <RouterLink class="ss-back" to="/esteticas/swiss-system">&#8592; Back to aesthetic</RouterLink>
+      <RouterLink class="ss-back" to="/esteticas/swiss-system">EXIT SYSTEM / 05</RouterLink>
       <p class="ss-brand">05</p>
     </header>
 
@@ -82,7 +82,7 @@ function changeStudy(direction: number) {
 
       <section id="variables" class="ss-section ss-variables" aria-labelledby="variables-title"><div class="ss-variables__intro"><h2 id="variables-title">Change<br /><em>the rules.</em></h2><p>Adjust the system and observe how a stable structure produces different expressions.</p></div><div class="ss-controls" aria-label="Visual system controls"><label>Grid density <output>{{ density }} columns</output><input v-model.number="density" type="range" min="4" max="8" step="1" aria-label="Grid density" /></label><label>Type scale <output>{{ typeScale }} pixels</output><input v-model.number="typeScale" type="range" min="42" max="76" step="2" aria-label="Type scale" /></label><label>Image crop <output>{{ crop }} percent</output><input v-model.number="crop" type="range" min="20" max="80" step="5" aria-label="Image crop" /></label><label class="ss-toggle"><input v-model="redLines" type="checkbox" /> <span>Show structural accent lines</span></label></div><div class="ss-variable-sample"><span class="ss-variable-sample__number">{{ String(density).padStart(2, '0') }}</span><p :style="{ fontSize: `${typeScale}px` }">Rules<br /><em>create freedom.</em></p></div></section>
 
-      <section class="ss-closing" aria-labelledby="closing-title"><h2 id="closing-title">Information<br /><em>in motion.</em></h2><p>One system. Many readings. The next composition begins where this one ends.</p><RouterLink to="/esteticas/swiss-system">&#8592; Back to aesthetic</RouterLink></section>
+      <section class="ss-closing" aria-labelledby="closing-title"><h2 id="closing-title">Information<br /><em>in motion.</em></h2><p>One system. Many readings. The next composition begins where this one ends.</p><RouterLink to="/esteticas/swiss-system">EXIT SYSTEM / 05</RouterLink></section>
     </main>
 
     <footer class="ss-footer"><span>SWISS SYSTEM / VISUAL RESEARCH</span><span>01—07 / 2026</span><span>ORDER IS NOT STATIC</span></footer>
